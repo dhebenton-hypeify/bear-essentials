@@ -1,45 +1,63 @@
 @font-face {
-  font-family: 'Geist';
-  src: url('./assets/Geist-VariableFont_wght.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-family: 'Geist', sans-serif;
+    font-family: 'Geist';
+    src: url('./assets/Geist-VariableFont_wght.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-family: 'Geist', sans-serif;
 }
 
 @font-face {
-  font-family: 'Gantari';
-  src: url('./assets/Gantari-VariableFont_wght.woff2') format('woff2-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-family: 'Gantari', sans-serif;
+    font-family: 'Gantari';
+    src: url('./assets/Gantari-VariableFont_wght.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-family: 'Gantari', sans-serif;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  font-family: 'Geist', sans-serif;
-  caret-color: transparent;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: 'Geist', sans-serif;
+    caret-color: transparent;
 }
 
+button,
 a {
     text-decoration: none;
+    cursor: pointer;
     transition: all 160ms cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-body,
-html {
-    height: 100%;
+button {
+    stroke: none;
+    border: none;
+}
+
+input {
+    border: none;
+    transition: all 160ms cubic-bezier(0.33, 1, 0.68, 1);
+    outline: none;
+    caret-color: #1C1C1C;
 }
 
 body {
     display: flex;
-    align-items: flex-end;
+    justify-content: end;
+    flex-direction: column;
 }
 
 body {
     background-color: #FAF5ED;
+}
+
+h1,
+h2 {
+    font-family: 'Gantari', sans-serif;
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 800;
+    line-height: 1.1;
 }
 
 /* =========================================
@@ -62,7 +80,169 @@ body {
     }
 }
 
+/* =========================================
+  BUTTON
+========================================= */
 
+.button {
+    padding: 0 13px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: 'Gantari', sans-serif;
+    font-variation-settings: 'wght' 700;
+    color: #EDEDED;
+    background-color: #B85C2E;
+    gap: 10px;
+}
+
+.button p {
+    font-size: 15px;
+    font-family: 'Gantari', sans-serif;
+    font-variation-settings: 'wght' 700;
+    color: #EDEDED;
+    text-transform: uppercase;
+}
+
+.button:hover p {
+    color: white;
+}
+
+.button:hover {
+    background-color: #D96930;
+    color: white;
+}
+
+.button:active {
+    scale: .95;
+}
+
+.button svg {
+    fill: #EDEDED;
+}
+
+.button:hover svg {
+    fill: white;
+}
+
+
+/* =========================================
+  SPAN
+========================================= */
+
+.show-mobile {
+    display: none;
+}
+
+
+/* =========================================
+  EMAIL CTA
+========================================= */
+
+.email-cta-wrap {
+    margin: 60px 0;
+}
+
+.email-cta {
+    padding: 64px;
+    border-radius: 28px;
+    background-image: url(./assets/email-sign-up-horizontal.webp);
+    aspect-ratio: 13 / 4.5;
+    background-size: cover;
+    justify-content: center;
+    background-position: center;
+    gap: 10px;
+}
+
+.email-cta h2 {
+    font-size: 31px;
+    color: #F2F2F2;
+
+}
+
+.email-cta-subheading {
+    font-size: 15px;
+    font-variation-settings: 'wght' 500;
+    color: #D9D9D9;
+    max-width: 28rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.email-cta-form {
+    gap: 6px;
+    align-items: center;
+    width: 29rem;
+}
+
+.email-cta-input {
+    flex: 1;
+    height: 38px;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+    padding: 12px;
+    font-size: 14px;
+    font-variation-settings: 'wght' 500;
+    color: #1C1C1C;
+}
+
+.email-cta-input::placeholder {
+    color: #8C8C8C;
+}
+
+.email-cta-input:focus,
+.email-cta-input:hover {
+    background-color: #F2F2F2;
+}
+
+.email-cta button {
+    overflow: hidden;
+}
+
+.email-cta button p {
+    transition: all 240ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.email-cta button svg {
+    transition: all 240ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.email-cta .button:hover p {
+    transform: translateX(130%);
+}
+
+.email-cta .button:hover svg {
+    transform: translateX(165%) scale(110%) rotate(45deg);
+}
+
+.email-cta .button:hover .cta-button-svg-wrap {
+    animation: flying 1.5s linear infinite;
+}
+
+@keyframes flying {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(3px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
 
 /* =========================================
   CONTAINER
@@ -147,14 +327,14 @@ footer ul {
     cursor: pointer;
 }
 
-.social-link svg path{
+.social-link svg path {
     fill: #CCCCCC;
     align-self: center;
     transition: all 160ms cubic-bezier(0.33, 1, 0.68, 1);
     justify-self: center;
 }
 
-.social-link svg{
+.social-link svg {
     align-self: center;
     justify-self: center;
 }
@@ -208,7 +388,7 @@ footer ul {
     /* =========================================
         CONTAINER
     ========================================= */
-    
+
     .container {
         padding-left: 5%;
         padding-right: 5%;
@@ -226,7 +406,7 @@ footer ul {
         gap: 80px;
     }
 
-} 
+}
 
 
 
@@ -239,6 +419,57 @@ footer ul {
 
 
 @media (max-width: 1280px) and (min-width: 1023px) {
+
+    /* =========================================
+        BUTTON
+    ========================================= */
+
+    .button {
+        padding: 0 12px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    /* =========================================
+        EMAIL CTA
+    ========================================= */
+
+    .email-cta-wrap {
+        margin: 54px 0;
+    }
+
+    .email-cta {
+        padding: 52px;
+        border-radius: 24px;
+        aspect-ratio: 13 / 5;
+        gap: 8px;
+    }
+
+    .email-cta h2 {
+        font-size: 27px;
+    }
+
+    .email-cta-subheading {
+        font-size: 13px;
+        max-width: 28rem;
+        margin-bottom: 10px;
+    }
+
+    .email-cta-form {
+        gap: 6px;
+        width: 26rem;
+    }
+
+    .email-cta-input {
+        height: 36px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
 
     /* =========================================
         CONTAINER
@@ -355,6 +586,64 @@ footer ul {
 @media (max-width: 1022px) and (min-width: 768px) {
 
     /* =========================================
+        BUTTON
+    ========================================= */
+
+    .button {
+        padding: 0 13px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    /* =========================================
+        EMAIL CTA
+    ========================================= */
+
+    .email-cta-wrap {
+        margin: 48px 0;
+    }
+
+    .email-cta {
+        padding: 52px;
+        border-radius: 24px;
+        background-image: url(./assets/email-sign-up-vertical.jpg);
+        aspect-ratio: 1.4 / 1;
+        background-size: cover;
+        justify-content: top;
+        background-position: center;
+        gap: 8px;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .email-cta h2 {
+        font-size: 29px;
+        text-align: center;
+    }
+
+    .email-cta-subheading {
+        font-size: 14px;
+        text-align: center;
+        max-width: 26rem;
+        margin-bottom: 12px;
+    }
+
+    .email-cta-form {
+        gap: 6px;
+        width: 26rem;
+    }
+
+    .email-cta-input {
+        height: 34px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* =========================================
         CONTAINER
     ========================================= */
 
@@ -451,7 +740,89 @@ footer ul {
 
 
 @media (max-width: 767px) {
-    
+    /* =========================================
+        BUTTON
+    ========================================= */
+
+    .button {
+        padding: 0 13px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    /* =========================================
+        SPAN
+    ========================================= */
+
+    .no-show-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+
+    /* =========================================
+        EMAIL CTA
+    ========================================= */
+
+    .email-cta-wrap {
+        margin: 48px 0;
+    }
+
+    .email-cta {
+        padding: 36px;
+        background-image: url(./assets/email-sign-up-vertical.jpg);
+        gap: 6px;
+        height: 600px;
+        aspect-ratio: auto;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .email-cta h2 {
+        font-size: 28px;
+        max-width: 15rem;
+        text-align: center;
+    }
+
+    .email-cta-subheading {
+        font-size: 14px;
+        text-align: center;
+        max-width: 16rem;
+        margin-bottom: 12px;
+    }
+
+    .email-cta-form {
+        gap: 6px;
+        width: 100%;
+        max-width: 40rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .email-cta-input {
+        height: 34px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .email-cta .button:hover p {
+        transform: none;
+    }
+
+    .email-cta .button:hover svg {
+        transform: none;
+    }
+
+    .email-cta .button:hover .cta-button-svg-wrap {
+        animation: none;
+    }
+
     /* =========================================
         CONTAINER
     ========================================= */
@@ -523,10 +894,6 @@ footer ul {
     }
 
     /* =========================================
-        FOOTER SOCIALS
-    ========================================= */
-
-    /* =========================================
         FOOTER BOTTOM BLOCK
     ========================================= */
 
@@ -543,7 +910,7 @@ footer ul {
     .footer-bottom-block p {
         width: 100%;
         line-height: 1.6;
-        
+
     }
 
 }
