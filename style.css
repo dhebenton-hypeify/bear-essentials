@@ -610,7 +610,7 @@ footer ul {
     .email-cta {
         padding: 52px;
         border-radius: 24px;
-        background-image: url(./assets/email-sign-up-vertical.jpg);
+        background-image: url(./assets/email-sign-up-vertical.webp);
         aspect-ratio: 1.4 / 1;
         background-size: cover;
         justify-content: top;
@@ -776,7 +776,7 @@ footer ul {
 
     .email-cta {
         padding: 36px;
-        background-image: url(./assets/email-sign-up-vertical.jpg);
+        background-image: url(./assets/email-sign-up-vertical.webp);
         gap: 6px;
         height: 600px;
         aspect-ratio: auto;
