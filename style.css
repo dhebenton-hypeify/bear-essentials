@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Geist';
     src: url('./assets/Geist-VariableFont_wght.woff2') format('woff2-variations');
+    src: url('./assets/Geist-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
 }
@@ -8,6 +9,7 @@
 @font-face {
     font-family: 'Gantari';
     src: url('./assets/Gantari-VariableFont_wght.woff2') format('woff2-variations');
+    src: url('./assets/Gantari-VariableFont_wght.woff2') format('woff2');
     font-weight: 100 900;
     font-style: normal;
 }
