@@ -1006,7 +1006,7 @@ footer ul {
     .faq-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-        gap: 20[x];
+        gap: 20px;
     }
 
     .faq-categories-wrap {
@@ -1032,12 +1032,12 @@ footer ul {
     }
 
     .faq h3 {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .faq-answer-wrap p {
         padding-top: 8px;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .faq svg {
