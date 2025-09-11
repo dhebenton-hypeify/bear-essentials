@@ -263,43 +263,72 @@
         </footer>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                const faqs = document.querySelectorAll(".faq");
+    const faqs = document.querySelectorAll(".faq");
 
-                if (faqs.length === 0) return;
+    if (faqs.length === 0) return;
 
-                function openAnswer(answer) {
-                    answer.style.transition = "none"; 
-                    answer.style.height = "0px";    
-                    answer.offsetHeight;             
-                    answer.style.transition = "all 200ms cubic-bezier(0.33, 1, 0.68, 1)";
-                    answer.style.height = answer.scrollHeight + "px";
-                }
+    function openAnswer(answer) {
+        answer.style.transition = "none";
+        answer.style.height = "0px";
+        answer.offsetHeight;
+        answer.style.transition = "all 200ms cubic-bezier(0.33, 1, 0.68, 1)";
+        answer.style.height = answer.scrollHeight + "px";
+    }
 
-                function closeAnswer(answer) {
-                    answer.style.height = answer.scrollHeight + "px";
-                    answer.offsetHeight;
-                    answer.style.transition = "all 200ms cubic-bezier(0.33, 1, 0.68, 1)";
-                    answer.style.height = "0px";
-                }
+    function closeAnswer(answer) {
+        answer.style.height = answer.scrollHeight + "px";
+        answer.offsetHeight;
+        answer.style.transition = "all 200ms cubic-bezier(0.33, 1, 0.68, 1)";
+        answer.style.height = "0px";
+    }
 
-                faqs[0].classList.add("active");
-                const firstAnswer = faqs[0].querySelector(".faq-answer-wrap");
-                if (firstAnswer) openAnswer(firstAnswer);
+    function activateFAQ(faq) {
+        faqs.forEach(f => {
+            f.classList.remove("active");
+            const ans = f.querySelector(".faq-answer-wrap");
+            if (ans) closeAnswer(ans);
+        });
 
-                faqs.forEach(faq => {
-                    faq.addEventListener("mouseenter", () => {
-                    faqs.forEach(f => {
-                        f.classList.remove("active");
-                        const ans = f.querySelector(".faq-answer-wrap");
+        faq.classList.add("active");
+        const ans = faq.querySelector(".faq-answer-wrap");
+        if (ans) openAnswer(ans);
+    }
+
+    // Open first by default
+    faqs[0].classList.add("active");
+    const firstAnswer = faqs[0].querySelector(".faq-answer-wrap");
+    if (firstAnswer) openAnswer(firstAnswer);
+
+    function bindEvents() {
+        const isDesktop = window.innerWidth > 1023;
+
+        faqs.forEach(faq => {
+            faq.replaceWith(faq.cloneNode(true)); // remove old listeners
+        });
+
+        const freshFaqs = document.querySelectorAll(".faq");
+
+        freshFaqs.forEach(faq => {
+            if (isDesktop) {
+                faq.addEventListener("mouseenter", () => activateFAQ(faq));
+            } else {
+                faq.addEventListener("click", () => {
+                    if (faq.classList.contains("active")) {
+                        faq.classList.remove("active");
+                        const ans = faq.querySelector(".faq-answer-wrap");
                         if (ans) closeAnswer(ans);
-                    });
-
-                    faq.classList.add("active");
-                    const ans = faq.querySelector(".faq-answer-wrap");
-                    if (ans) openAnswer(ans);
-                    });
+                    } else {
+                        activateFAQ(faq);
+                    }
                 });
-            });
+            }
+        });
+    }
+
+    bindEvents();
+    window.addEventListener("resize", bindEvents);
+});
+
         </script>
 
 
