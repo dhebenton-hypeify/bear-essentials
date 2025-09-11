@@ -3,7 +3,6 @@
     src: url('./assets/Geist-VariableFont_wght.woff2') format('woff2-variations');
     font-weight: 100 900;
     font-style: normal;
-    font-family: 'Geist', sans-serif;
 }
 
 @font-face {
@@ -11,7 +10,6 @@
     src: url('./assets/Gantari-VariableFont_wght.woff2') format('woff2-variations');
     font-weight: 100 900;
     font-style: normal;
-    font-family: 'Gantari', sans-serif;
 }
 
 * {
@@ -52,11 +50,16 @@ body {
     background-color: #FAF5ED;
 }
 
+p {
+    line-height: 1.6;
+}
+
 h1,
-h2 {
+h2,
+h3 {
     font-family: 'Gantari', sans-serif;
     text-transform: uppercase;
-    font-variation-settings: 'wght' 800;
+    font-variation-settings: 'wght' 850;
     line-height: 1.1;
 }
 
@@ -71,6 +74,11 @@ h2 {
 
 .f-row {
     display: flex;
+}
+
+.j-s-b {
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -128,6 +136,15 @@ h2 {
     fill: white;
 }
 
+/* =========================================
+  TYPOGRAPHY
+========================================= */
+
+h2 {
+    font-size: 28px;
+    color: #0D0D0D;
+}
+
 
 /* =========================================
   SPAN
@@ -137,6 +154,126 @@ h2 {
     display: none;
 }
 
+/* =========================================
+  FAQ
+========================================= */
+
+.faq-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 300px 1fr;
+}
+
+.faq-categories-wrap {
+    gap: 16px;
+}
+
+.faq-categories-wrap h4{
+    font-size: 14px;
+    font-variation-settings: 'wght' 900;
+    color: #333333;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.faq-caterogy {
+    background-color: transparent;
+    font-size: 15px;
+    font-variation-settings: 'wght' 500;
+    gap: 10px;
+    color: #666666;
+    display: grid;
+    grid-template-columns: 21px 1fr;
+    height: 21px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.faq-caterogy svg {
+    align-self: center;
+    justify-self: center;
+}
+
+.faq-caterogy path {
+    fill: #666666;
+    transition: all 160ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.faq-caterogy:hover {
+    color: #1C1C1C;
+}
+
+.faq-caterogy:hover path {
+    fill: #1C1C1C;
+}
+
+.faq-caterogy.active {
+    color: #D96930;
+}
+
+.faq-caterogy.active path {
+    fill: #D96930;
+}
+
+.faq-wrap {
+    gap: 12px;
+}
+
+.faq {
+    border: 1px solid hsl(0, 0%, 0%, .15);
+    border-radius: 12px;
+    box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0%);
+    transition: all 200ms cubic-bezier(0.33, 1, 0.68, 1);
+    padding: 20px 24px;
+    cursor: pointer;
+}
+
+.faq h3 {
+    font-size: 18px;
+    text-transform: none;
+    font-variation-settings: 'wght' 700;
+}
+
+.faq-answer-wrap {
+    overflow: hidden;
+    height: 0px;
+}
+
+.faq-answer-wrap p {
+    padding-top: 6px;
+    margin-bottom: -3px;
+    font-variation-settings: 'wght' 500;
+    color: #333333;
+    font-size: 14px;
+}
+
+.faq.active {
+    border: 1px solid #D96930;
+    box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 14%);
+}
+
+.faq.active h3 {
+    color: #D96930;
+}
+
+.faq svg {
+    transition: all 200ms cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.faq path {
+    transition: all 200ms cubic-bezier(0.33, 1, 0.68, 1);
+    fill: #1C1C1C;
+}
+
+.faq.active svg {
+    transform: rotate(45deg);
+}
+
+.faq.active path {
+    fill: #D96930;
+}
 
 /* =========================================
   EMAIL CTA
@@ -251,6 +388,16 @@ h2 {
 .container {
     padding-left: calc((100svw - 1350px) / 2);
     padding-right: calc((100svw - 1350px) / 2);
+}
+
+section {
+    padding-bottom: 120px;
+    padding-top: 120px;
+    gap: 52px;
+}
+
+.cent-head h2{
+    text-align: center;
 }
 
 /* =========================================
@@ -419,6 +566,50 @@ footer ul {
 
 
 @media (max-width: 1280px) and (min-width: 1023px) {
+    
+
+    /* =========================================
+        FAQ
+    ========================================= */
+
+    .faq-grid {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .faq-categories-wrap {
+        gap: 14px;
+    }
+
+    .faq-categories-wrap h4{
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .faq-caterogy {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .faq-wrap {
+        gap: 10px;
+    }
+
+    .faq {
+        padding: 16px 18px;
+    }
+
+    .faq h3 {
+        font-size: 16px;
+    }
+
+    .faq-answer-wrap p {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+
+    .faq svg {
+        height: 11px;
+    }
 
     /* =========================================
         BUTTON
@@ -479,6 +670,8 @@ footer ul {
         padding-left: 6%;
         padding-right: 6%;
     }
+
+    
 
 
     /* =========================================
@@ -584,6 +777,58 @@ footer ul {
 
 
 @media (max-width: 1022px) and (min-width: 768px) {
+    /* =========================================
+        TYPOGRAPHY
+    ========================================= */
+
+    h2 {
+        font-size: 24px;
+        color: #0D0D0D;
+    }
+
+    /* =========================================
+        FAQ
+    ========================================= */
+
+    .faq-grid {
+        grid-template-columns: 180px 1fr;
+    }
+
+    .faq-categories-wrap {
+        gap: 14px;
+    }
+
+    .faq-categories-wrap h4{
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .faq-caterogy {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .faq-wrap {
+        gap: 10px;
+    }
+
+    .faq {
+        padding: 16px 18px;
+    }
+
+    .faq h3 {
+        font-size: 16px;
+    }
+
+    .faq-answer-wrap p {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+
+    .faq svg {
+        height: 11px;
+    }
+
 
     /* =========================================
         BUTTON
@@ -648,8 +893,14 @@ footer ul {
     ========================================= */
 
     .container {
-        padding-left: 7%;
-        padding-right: 7%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    section {
+        padding-bottom: 90px;
+        padding-top: 90px;
+        gap: 40px;
     }
 
     /* =========================================
@@ -741,6 +992,59 @@ footer ul {
 
 @media (max-width: 767px) {
     /* =========================================
+        TYPOGRAPHY
+    ========================================= */
+
+    h2 {
+        font-size: 24px;
+    }
+
+    /* =========================================
+        FAQ
+    ========================================= */
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 20[x];
+    }
+
+    .faq-categories-wrap {
+        gap: 16px;
+    }
+
+    .faq-categories-wrap h4{
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .faq-caterogy {
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .faq-wrap {
+        gap: 10px;
+    }
+
+    .faq {
+        padding: 16px 18px;
+    }
+
+    .faq h3 {
+        font-size: 16px;
+    }
+
+    .faq-answer-wrap p {
+        padding-top: 8px;
+        font-size: 13px;
+    }
+
+    .faq svg {
+        height: 11px;
+    }
+
+    /* =========================================
         BUTTON
     ========================================= */
 
@@ -830,6 +1134,12 @@ footer ul {
     .container {
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    section {
+        padding-bottom: 80px;
+        padding-top: 80px;
+        gap: 36px;
     }
 
     /* =========================================
