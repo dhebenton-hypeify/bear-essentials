@@ -61,6 +61,7 @@ h2,
 h3 {
     font-family: 'Gantari', sans-serif;
     text-transform: uppercase;
+    font-variation-settings: 'wght' 850;
     line-height: 1.1;
 }
 
@@ -102,6 +103,7 @@ h3 {
     border-radius: 7px;
     font-size: 15px;
     font-family: 'Gantari', sans-serif;
+    font-variation-settings: 'wght' 700;
     color: #EDEDED;
     background-color: #B85C2E;
     gap: 10px;
@@ -110,6 +112,7 @@ h3 {
 .button p {
     font-size: 15px;
     font-family: 'Gantari', sans-serif;
+    font-variation-settings: 'wght' 700;
     color: #EDEDED;
     text-transform: uppercase;
 }
@@ -169,6 +172,7 @@ h2 {
 
 .faq-categories-wrap h4{
     font-size: 14px;
+    font-variation-settings: 'wght' 900;
     color: #333333;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -177,6 +181,7 @@ h2 {
 .faq-caterogy {
     background-color: transparent;
     font-size: 15px;
+    font-variation-settings: 'wght' 500;
     gap: 10px;
     color: #666666;
     display: grid;
@@ -230,6 +235,7 @@ h2 {
 .faq h3 {
     font-size: 18px;
     text-transform: none;
+    font-variation-settings: 'wght' 700;
 }
 
 .faq-answer-wrap {
@@ -240,6 +246,7 @@ h2 {
 .faq-answer-wrap p {
     padding-top: 6px;
     margin-bottom: -3px;
+    font-variation-settings: 'wght' 500;
     color: #333333;
     font-size: 14px;
 }
@@ -297,6 +304,7 @@ h2 {
 
 .email-cta-subheading {
     font-size: 15px;
+    font-variation-settings: 'wght' 500;
     color: #D9D9D9;
     max-width: 28rem;
     line-height: 1.5;
@@ -316,6 +324,7 @@ h2 {
     background-color: #D9D9D9;
     padding: 12px;
     font-size: 14px;
+    font-variation-settings: 'wght' 500;
     color: #1C1C1C;
 }
 
@@ -416,6 +425,7 @@ footer {
 
 .footer-first-block p {
     font-size: 14px;
+    font-variation-settings: 'wght' 500;
     line-height: 1.7;
     margin: -6px 0;
     max-width: 21.5rem;
@@ -439,6 +449,7 @@ footer ul {
     font-family: 'Gantari', sans-serif;
     font-size: 18px;
     color: #F2F2F2;
+    font-variation-settings: 'wght' 800;
     letter-spacing: 0px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -446,6 +457,7 @@ footer ul {
 
 .footer-link {
     font-size: 14px;
+    font-variation-settings: 'wght' 480;
     color: #808080;
 }
 
@@ -500,6 +512,7 @@ footer ul {
 .footer-bottom-block a,
 .footer-bottom-block p {
     font-size: 13px;
+    font-variation-settings: 'wght' 480;
     color: #4D4D4D;
 }
 
